@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{83EE9623-5D0C-4A97-89CA-C4B0AF9D0355}">
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{F7C48D5A-7951-48CE-A7D1-6681F831888B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -165,7 +165,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Airline"
-              DTS:DTSID="{303A0C97-69EE-481A-9B69-FB45C31B268B}"
+              DTS:DTSID="{F6B20C4A-8162-465A-A93F-2AD7B405F562}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -174,7 +174,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Airline_ID"
-              DTS:DTSID="{988F2320-C350-440E-AC39-3C295D1801CD}"
+              DTS:DTSID="{A0E6C28C-6F9D-4834-84A1-6CC1FAAD526F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -183,15 +183,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Source_Airport"
-              DTS:DTSID="{66283CD6-BF0B-4328-8D61-97E9DE2655F7}"
+              DTS:DTSID="{93A9D00E-3727-4D64-BA7F-3FECE042AE6F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Source_Airport_ID"
-              DTS:DTSID="{B7F8FFEF-442C-463C-AC28-BA29D514BB23}"
+              DTS:DTSID="{9A94CE80-2A21-4E48-9A20-9F2B0CF34912}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -200,15 +201,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destination_Airport"
-              DTS:DTSID="{601D96CA-27DC-4FCC-8851-41C8F5E88A93}"
+              DTS:DTSID="{06896A8D-D39B-4608-AB57-41B01491573C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Destination_Airport_ID"
-              DTS:DTSID="{D57523FD-1592-42B1-9C83-D307F176B143}"
+              DTS:DTSID="{7E36154B-A1C6-440D-AB49-F88DBCBF8CF5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -217,7 +219,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Codeshare"
-              DTS:DTSID="{1A0010BC-A3AD-453A-9896-8319393095C4}"
+              DTS:DTSID="{51D836C7-0ADC-4863-86B8-D7E7DCFEFDBA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -225,7 +227,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Stops"
-              DTS:DTSID="{70B11FB9-8536-414E-9205-031A6A75F841}"
+              DTS:DTSID="{75DFF33A-1C68-4B11-8A06-F16E954B4FE8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -234,7 +236,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Equipment"
-              DTS:DTSID="{54BCBA87-13AF-45C5-8AB5-128C9433FEC9}"
+              DTS:DTSID="{F51306BC-2D14-479C-BEDB-FC2DE5EE342E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -248,6 +250,105 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=EKATERINAZHCDB9\ZHELANDE;Initial Catalog=FlightDWHv2.0;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[out]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CF116B49-2B4F-4142-96F1-0408F151B03E}"
+      DTS:ObjectName="out">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1049"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\Mac\Home\Desktop\out2.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Airline"
+              DTS:DTSID="{4FABC58E-290E-430C-AC56-2AC784B26DE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Airline_ID"
+              DTS:DTSID="{3966C830-CCD7-44AE-B07B-8ACC5C925CC9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Source_Airport"
+              DTS:DTSID="{56879B91-AA73-46FE-B18C-C174BF4D56EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Source_Airport_ID"
+              DTS:DTSID="{C3C00493-1105-4AC4-AE24-9E32B6ADA521}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destination_Airport"
+              DTS:DTSID="{6C4B3E95-8E03-4E3B-99B0-E63AAC49DF87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destination_Airport_ID"
+              DTS:DTSID="{F40DBDD8-6E22-4548-ADFF-27C77423DC10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codeshare"
+              DTS:DTSID="{7EB8AC8E-BED3-4951-A193-A8408A41F009}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stops"
+              DTS:DTSID="{42137ACD-8630-4325-817A-5B4DB80BD090}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Equipment"
+              DTS:DTSID="{8B4A55A7-5169-4214-BB6D-035872E15B77}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -6222,7 +6323,8 @@ WHERE        (isLoaded IS NULL)</property>
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Routes_Art]) [refTable]
+where [refTable].[Airline_ID] = ? and [refTable].[Source_Airport_ID] = ? and [refTable].[Destination_Airport_ID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -6253,12 +6355,12 @@ WHERE        (isLoaded IS NULL)</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Airline" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Airline_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Source_Airport" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Source_Airport_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Destination_Airport" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Destination_Airport_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Codeshare" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Stops" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Equipment" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TimeEnd" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TimeStart" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Key_RT" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="isLoaded" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Airline" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Airline_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Source_Airport" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Source_Airport_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Destination_Airport" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Destination_Airport_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Codeshare" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Stops" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Equipment" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Key_RT" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TimeStart" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TimeEnd" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="isLoaded" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap"></property>
+                  name="ParameterMap">#{Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Airline_ID]};#{Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Source_Airport_ID]};#{Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Destination_Airport_ID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6280,6 +6382,62 @@ WHERE        (isLoaded IS NULL)</property>
                 <input
                   refId="Package\Load routes to main table\Compare with existing.Inputs[Lookup Input]"
                   name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load routes to main table\Compare with existing.Inputs[Lookup Input].Columns[Airline_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Airline_ID"
+                      lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Airline_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Airline_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load routes to main table\Compare with existing.Inputs[Lookup Input].Columns[Source_Airport_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Source_Airport_ID"
+                      lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Source_Airport_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Source_Airport_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load routes to main table\Compare with existing.Inputs[Lookup Input].Columns[Destination_Airport_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destination_Airport_ID"
+                      lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Destination_Airport_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Destination_Airport_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -6497,83 +6655,6 @@ set ?= (select id from @RC)</property>
               </outputs>
             </component>
             <component
-              refId="Package\Load routes to main table\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Load routes to main table\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load routes to main table\Data Conversion.Inputs[Data Conversion Input].Columns[Airline_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Airline_ID"
-                      lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Airline_ID]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load routes to main table\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Load routes to main table\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load routes to main table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Airline_ID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Load routes to main table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Airline_ID]"
-                      name="Copy of Airline_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Airline_ID]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Load routes to main table\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Load routes to main table\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load routes to main table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load routes to main table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load routes to main table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load routes to main table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Load routes to main table\Load to artificial table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -6742,9 +6823,7 @@ set ?= (select id from @RC)</property>
                       name="Source_Airport" />
                     <externalMetadataColumn
                       refId="Package\Load routes to main table\Load to artificial table.Inputs[OLE DB Destination Input].ExternalColumns[Source_Airport_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Source_Airport_ID" />
                     <externalMetadataColumn
                       refId="Package\Load routes to main table\Load to artificial table.Inputs[OLE DB Destination Input].ExternalColumns[Destination_Airport]"
@@ -6754,9 +6833,7 @@ set ?= (select id from @RC)</property>
                       name="Destination_Airport" />
                     <externalMetadataColumn
                       refId="Package\Load routes to main table\Load to artificial table.Inputs[OLE DB Destination Input].ExternalColumns[Destination_Airport_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Destination_Airport_ID" />
                     <externalMetadataColumn
                       refId="Package\Load routes to main table\Load to artificial table.Inputs[OLE DB Destination Input].ExternalColumns[Codeshare]"
@@ -6854,12 +6931,12 @@ set ?= (select id from @RC)</property>
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Airline]"
                       length="3"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Airline]"
                       name="Airline"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6876,12 +6953,12 @@ set ?= (select id from @RC)</property>
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Airline_ID]"
                       length="50"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Airline_ID]"
                       name="Airline_ID"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6898,12 +6975,12 @@ set ?= (select id from @RC)</property>
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Source_Airport]"
                       length="3"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Source_Airport]"
                       name="Source_Airport"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6917,13 +6994,15 @@ set ?= (select id from @RC)</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Source_Airport_ID]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Source_Airport_ID]"
+                      length="50"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Source_Airport_ID]"
                       name="Source_Airport_ID"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6940,12 +7019,12 @@ set ?= (select id from @RC)</property>
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Destination_Airport]"
                       length="3"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Destination_Airport]"
                       name="Destination_Airport"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6959,13 +7038,15 @@ set ?= (select id from @RC)</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Destination_Airport_ID]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Destination_Airport_ID]"
+                      length="50"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Destination_Airport_ID]"
                       name="Destination_Airport_ID"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6982,12 +7063,12 @@ set ?= (select id from @RC)</property>
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Codeshare]"
                       length="1"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Codeshare]"
                       name="Codeshare"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -7003,11 +7084,11 @@ set ?= (select id from @RC)</property>
                       refId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Stops]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Stops]"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Stops]"
                       name="Stops"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -7024,12 +7105,12 @@ set ?= (select id from @RC)</property>
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Equipment]"
                       length="30"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Equipment]"
                       name="Equipment"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -7064,7 +7145,9 @@ set ?= (select id from @RC)</property>
                       name="Source_Airport" />
                     <externalMetadataColumn
                       refId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Source_Airport_ID]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Source_Airport_ID" />
                     <externalMetadataColumn
                       refId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Destination_Airport]"
@@ -7074,7 +7157,9 @@ set ?= (select id from @RC)</property>
                       name="Destination_Airport" />
                     <externalMetadataColumn
                       refId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Destination_Airport_ID]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Destination_Airport_ID" />
                     <externalMetadataColumn
                       refId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].ExternalColumns[Codeshare]"
@@ -7593,92 +7678,7 @@ namespace SC_98ca7deca57248d7ab43094a1dc2dffa.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C25137F1-C617-423C-8192-663E709B6269}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SC_98ca7deca57248d7ab43094a1dc2dffa</RootNamespace>
-    <AssemblyName>SC_98ca7deca57248d7ab43094a1dc2dffa</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Compile Include="main.cs" />
-    <Compile Include="BufferWrapper.cs" />
-    <Compile Include="ComponentWrapper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <!-- Include the build rules for a C# project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
-        <Host Name="ScriptComponent" IconIndex="0" />
-        <ProjectClient>
-          <HostIdentifier>SSIS_SC130</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></arrayElement>
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{C25137F1-C617-423C-8192-663E709B6269}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>SC_98ca7deca57248d7ab43094a1dc2dffa</RootNamespace><AssemblyName>SC_BE8883229A4E4DE4A1C6A76E3EC23A49</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Compile Include="main.cs" /><Compile Include="BufferWrapper.cs" /><Compile Include="ComponentWrapper.cs" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><!-- This section defines VSTA properties that describe the host-changable project properties. --><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" /><Host Name="ScriptComponent" IconIndex="0" /><ProjectClient><HostIdentifier>SSIS_SC130</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Project]]></arrayElement>
                     <arrayElement
@@ -7687,20 +7687,20 @@ namespace SC_98ca7deca57248d7ab43094a1dc2dffa.Properties {
                       dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
-		<msb:CodeName>SC_98ca7deca57248d7ab43094a1dc2dffa</msb:CodeName>
 		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>SC_98ca7deca57248d7ab43094a1dc2dffa</msb:CodeName>
 		<msb:DisplayName>SC_98ca7deca57248d7ab43094a1dc2dffa</msb:DisplayName>
 		<msb:ProjectId>{712239D2-A00D-4D32-9A39-36982A9CF67A}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="SC_98ca7deca57248d7ab43094a1dc2dffa.csproj"/>
-		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="main.cs"/>
 		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="ComponentWrapper.cs"/>
 	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
@@ -7831,152 +7831,13 @@ namespace SC_98ca7deca57248d7ab43094a1dc2dffa.Properties {
                   name="BinaryCode"
                   state="cdata">
                   <arrayElements
-                    arrayElementCount="2">
-                    <arrayElement
-                      dataType="System.String"><![CDATA[SC_98ca7deca57248d7ab43094a1dc2dffa.dll]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAE42S1cAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAljIA
-AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEQyAABPAAAAAEAAAGwEAAAAAAAAAAAAAAAAAAAA
-AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAnBIAAAAgAAAAFAAAAAIA
-AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAGwEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAB4
-MgAAAAAAAEgAAAACAAUA8CEAAJwPAAABAAAAAAAAAIwxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACirGA28GAAAGLBIDbwYAAAZyAQAA
-cCgSAAAKLAsDcgMAAHBvBwAABgMoEwAACm8KAAAGKh4CKA4AAAYqKgIDBAUoFAAACipSAnsVAAAK
-AnsWAAAKFpRvFwAACiomAhYDKBgAAAoqIgIWKBkAAAoqWgMsCAIWKBoAAAoqcgkAAHBzGwAACno6
-AhcDjBEAAAEoGAAACipaAywIAhcoGgAACipyCQAAcHMbAAAKeh4CKBwAAAoqHgIoHQAACip+Aige
-AAAKAgJzEgAABn0BAAAEAgJzEwAABn0CAAAEKpIEcqYAAHAabx8AAAosFQIFAgMoIAAACg4EcwUA
-AAZvEAAABipKKwcCA28RAAAGA28MAAAGLfEqBio6AighAAAKAgN9AwAABCo6AighAAAKAgN9BAAA
-BCoeAighAAAKKq5+BQAABC0ecrYAAHDQBwAAAigiAAAKbyMAAApzJAAACoAFAAAEfgUAAAQqGn4G
-AAAEKh4CgAYAAAQqGn4HAAAEKh4CKCUAAAoqLnMZAAAGgAcAAAQqQlNKQgEAAQAAAAAADAAAAHY0
-LjAuMzAzMTkAAAAABQBsAAAArAUAACN+AAAYBgAAfAYAACNTdHJpbmdzAAAAAJQMAAAoAQAAI1VT
-ALwNAAAQAAAAI0dVSUQAAADMDQAA0AEAACNCbG9iAAAAAAAAAAIAAAFXFaABCQEAAAD6ATMAFgAA
-AQAAACAAAAAIAAAABwAAABoAAAARAAAAJQAAABAAAAADAAAABwAAAAoAAAABAAAABAAAAAEAAAAA
-ABIDAQAAAAAABgAJApAEBgCdApAEBgBVAX0EDwAEBQAABgCCAdIDBgDsAdIDBgDNAdIDBgCEAtID
-BgApAtIDBgBCAtIDBgCZAdIDBgC0AdgCCgBdAoYACgBPBIYADgBABIYACgAbBIYABgB9AIoDCgDK
-BYYABgCNBYoDBgA4AX0EBgBgBLAEBgAPBL0DEgAIAfwCEgBpAfwCEgDwAKgDBgAdAZAEBgD1AooD
-BgDkA4oDBgD+A4oDBgCnAIoDBgBPAIoDBgBlBtIDAAAAAAEAAAAAAAEAAQABABAAnQMAABAAAQAB
-AAEAEAAzBAAAOQABAAUAAQAQAKwFAABJAAEADgABABAAgQUAAE0AAwASAAEAEABCBQAATQAEABMA
-AAAQALcEEwVNAAUAFAAAARAAcQUTBWUABwAYAAYAgQWAAAYAQgWEAAEAugWIAAEAugWIABEAkQOM
-ABEA4ACQABEAPwCUAFAgAAAAAMYAuwIGAAEAWCAAAAAAxgDGAgYAAQBgIAAAAADGAEIGmAABAJIg
-AAAAAIYYcAQGAAIAmiAAAAAAhhhwBCYAAgClIAAAAACGCKwAngAFALogAAAAAIYIugAQAAUAxCAA
-AAAAhgg6A0gABgDNIAAAAACGCE8DogAGAOQgAAAAAIYI9wWnAAcA8yAAAAAAhghkA6IACAAKIQAA
-AACGAFkGSAAJABIhAAAAAIYAlAVIAAkAGiEAAAAAhhhwBAYACQA6IQAAAADGAC0GrQAJAF8hAAAA
-AMYBJgaYAA0AciEAAAAAxgFCBpgADgB0IQAAAACGGHAEtwAPAIMhAAAAAIYYcAS3ABAAkiEAAAAA
-gxhwBAYAEQCaIQAAAACTCFwEvQARAMYhAAAAAJMIyADCABEAzSEAAAAAkwjUAMcAEQDVIQAAAACW
-CKAFzQASANwhAAAAAIYYcAQGABIA5CEAAAAAkRh2BNIAEgAAAAEAXQYAAAEAVQQAAAIATAUAAAMA
-KQQAAAEA0gIAAAEA0gIAAAEA0gIAAAEA0gIAAAEACgAAAAIAcwAAAAMAVQQAAAQAKQQAAAEAVQQA
-AAEAXQYAAAEA0AUAAAEA0AUAAAEA0gIJAHAEAQARAHAEBgAZAHAECgApAHAEEAAxAHAEEAA5AHAE
-EABBAHAEEABJAHAEEABRAHAEEABZAHAEEABhAHAEEABpAHAEBgChAHAEBgDBAHAEFQDRAHAEBgCR
-ALsCBgCRAMYCBgDZAG4GGwCJADoGIQBxAHAEJgBxAFUEMABxAEwFNAB5APICOABxAIEDPQBxAHID
-QwBxAHkDAQDhAHAEEABxAFkGSABxAJQFSACRAHAEBgDZAHoFTACRAGAFUwCZAHAEBgDxAGEAWQDx
-AGEGYACpAHAEZgDJAHAEBgAuAAsA8gAuABMA+wAuABsAGgEuACMAIwEuACsATAEuADMATAEuADsA
-UgEuAEMAIwEuAEsAYQEuAFMATAEuAFsAgQFDAGMAywGpAHMAGgHJAHMAGgHhAHsAywHjAGsAywED
-AAEABwAFAAgABwAAAL4A1gAAAFMD2gAAAPsF3gAAAGgD2gAAAGAE4wAAAOgA6AAAAKQF7QACAAYA
-AwABAAcAAwACAAgABQABAAkABQABAAoABwABAAsACQACABUACwACABYADQABABcADQACABgADwAE
-gAAAAQAAAAAAAAAAAAAAAAASAAAABAAAAAAAAAAAAAAAbgA2AAAAAAANAAAAAAAAAAAAAAB3ANoF
-AAAAAA0AAAAAAAAAAAAAAHcABQYAAAAABAAAAAAAAAAAAAAAbgCKAwAAAAAAAAAAAQAAAMEEAAAA
-AAAAADxNb2R1bGU+AElucHV0SUQAU0NfOThjYTdkZWNhNTcyNDhkN2FiNDMwOTRhMWRjMmRmZmEA
-bXNjb3JsaWIAZGVmYXVsdEluc3RhbmNlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFu
-ZGxlAElucHV0TmFtZQBEYXRlVGltZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBU
-eXBlAGdldF9Db2Rlc2hhcmUAc2V0X0NvZGVzaGFyZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQBy
-ZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3Rh
-dGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0
-ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRp
-dGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0
-dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlv
-bkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVj
-dEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50
-RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBh
-dGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBTeXN0ZW0uUnVu
-dGltZS5WZXJzaW9uaW5nAEdldFN0cmluZwBTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU0NfOThjYTdk
-ZWNhNTcyNDhkN2FiNDMwOTRhMWRjMmRmZmEuZGxsAGdldF9Db2Rlc2hhcmVfSXNOdWxsAHNldF9D
-b2Rlc2hhcmVfSXNOdWxsAHNldF9UaW1lU3RhcnRfSXNOdWxsAFNldE51bGwAc2V0X0l0ZW0AU3lz
-dGVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkds
-b2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBT
-dHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAElucHV0
-MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgAu
-Y3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2Vy
-dmljZXMAU3lzdGVtLlJlc291cmNlcwBTQ185OGNhN2RlY2E1NzI0OGQ3YWI0MzA5NGExZGMyZGZm
-YS5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfOThjYTdk
-ZWNhNTcyNDhkN2FiNDMwOTRhMWRjMmRmZmEuUHJvcGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29s
-dW1uSW5kZXhlcwBHZXRDb2x1bW5JbmRleGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBP
-YmplY3QARW5kT2ZSb3dzZXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25l
-bnQAU2NyaXB0Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQAc2V0X1RpbWVT
-dGFydABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0
-AGdldF9Ob3cASW5wdXQwX1Byb2Nlc3NJbnB1dFJvdwBOZXh0Um93AGdldF9Bc3NlbWJseQBvcF9F
-cXVhbGl0eQAAAAABAAVOAEEAAICbSQBzAE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEA
-bgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAg
-AGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEA
-ZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfADkAOABjAGEANwBkAGUAYwBhADUANwAyADQAOABk
-ADcAYQBiADQAMwAwADkANABhADEAZABjADIAZABmAGYAYQAuAFAAcgBvAHAAZQByAHQAaQBlAHMA
-LgBSAGUAcwBvAHUAcgBjAGUAcwAAiSkeFuvJ7U6g+3csoWBy0gAEIAEBCAMgAAEFIAEBEREEIAEB
-DgUgAQERXQUAAgIODgQAABFFCSADARI9HQgSQQMGEj0DBh0IBCABDggFIAIBCBwEIAECCAMgAAIG
-IAICDhF1BSABHQgIBgABEnkRfQUgABKAgQcgAgEOEoCBCLd6XFYZNOCJCImEXc2AgMyRAwYSFAMG
-EhgDBhJJAwYSVQMGElkDBhIgBSABARIMAyAADgQgAQECBSABARFFCSAEAQgOEj0SQQUgAQESSQQA
-ABJVBAAAElkFAAEBElkEAAASIAMAAAEDKAAOAygAAgQoABFFBAgAElUECAASWQQIABIgCAEACAAA
-AAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTQ185OGNhN2Rl
-Y2E1NzI0OGQ3YWI0MzA5NGExZGMyZGZmYQAABQEAAAAADgEACU1pY3Jvc29mdAAAHwEAGkNvcHly
-aWdodCBAIE1pY3Jvc29mdCAyMDE2AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjUBAFQO
-FEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNQQBAAAAtAAAAM7K774BAAAA
-kQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00
-LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkj
-U3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAA
-AGwyAAAAAAAAAAAAAIYyAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4MgAAAAAAAAAAAAAAAF9D
-b3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
-SAAAAFhAAAAQBAAAAAAAAAAAAAAQBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
-AAAAvQTv/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
-AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
-AAAAAAAAALAEcAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAATAMAAAEAMAAwADAA
-MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAADQACgABAEMAbwBtAHAAYQBu
-AHkATgBhAG0AZQAAAAAATQBpAGMAcgBvAHMAbwBmAHQAAABwACQAAQBGAGkAbABlAEQAZQBzAGMA
-cgBpAHAAdABpAG8AbgAAAAAAUwBDAF8AOQA4AGMAYQA3AGQAZQBjAGEANQA3ADIANAA4AGQANwBh
-AGIANAAzADAAOQA0AGEAMQBkAGMAMgBkAGYAZgBhAAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkA
-bwBuAAAAAAAxAC4AMAAuADAALgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABT
-AEMAXwA5ADgAYwBhADcAZABlAGMAYQA1ADcAMgA0ADgAZAA3AGEAYgA0ADMAMAA5ADQAYQAxAGQA
-YwAyAGQAZgBmAGEALgBkAGwAbAAAAFoAGwABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAA
-AEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgAE0AaQBjAHIAbwBzAG8AZgB0ACAAMgAwADEANgAAAAAA
-KgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBn
-AGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AOQA4AGMAYQA3AGQAZQBjAGEANQA3ADIA
-NAA4AGQANwBhAGIANAAzADAAOQA0AGEAMQBkAGMAMgBkAGYAZgBhAC4AZABsAGwAAABoACQAAQBQ
-AHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADkAOABjAGEANwBkAGUAYwBhADUANwAyADQA
-OABkADcAYQBiADQAMwAwADkANABhADEAZABjADIAZABmAGYAYQAAADQACAABAFAAcgBvAGQAdQBj
-AHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgAAQBBAHMAcwBlAG0AYgBsAHkA
-IABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAmDIAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
-                  </arrayElements>
+                    arrayElementCount="0" />
                 </property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                   name="VSTAProjectName"
-                  typeConverter="NOTBROWSABLE">SC_98ca7deca57248d7ab43094a1dc2dffa</property>
+                  typeConverter="NOTBROWSABLE">SC_be8883229a4e4de4a1c6a76e3ec23a49</property>
                 <property
                   dataType="System.String"
                   description="Specifies the programming language used by the script."
@@ -8070,12 +7931,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Airline_ID]" />
                     <inputColumn
                       refId="Package\Load routes to main table\Сhange of encoding.Inputs[Data Conversion Input].Columns[Source_Airport_ID]"
-                      cachedDataType="i4"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Source_Airport_ID"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Source_Airport_ID]" />
                     <inputColumn
                       refId="Package\Load routes to main table\Сhange of encoding.Inputs[Data Conversion Input].Columns[Destination_Airport_ID]"
-                      cachedDataType="i4"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Destination_Airport_ID"
                       lineageId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output].Columns[Destination_Airport_ID]" />
                   </inputColumns>
@@ -8184,20 +8049,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               name="Data Conversion Output"
               startId="Package\Load routes to main table\Сhange of encoding.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Load routes to main table.Paths[Data Conversion Output1]"
-              endId="Package\Load routes to main table\Compare with existing.Inputs[Lookup Input]"
-              name="Data Conversion Output"
-              startId="Package\Load routes to main table\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
               refId="Package\Load routes to main table.Paths[Derived Column Output]"
               endId="Package\Load routes to main table\Create keys for dwh.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
               startId="Package\Load routes to main table\create dwh_key column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Load routes to main table.Paths[Flat File Source Output]"
-              endId="Package\Load routes to main table\Data Conversion.Inputs[Data Conversion Input]"
-              name="Flat File Source Output"
-              startId="Package\Load routes to main table\Routes source file.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Load routes to main table.Paths[Lookup No Match Output]"
               endId="Package\Load routes to main table\create dwh_key column.Inputs[Derived Column Input]"
@@ -8496,13 +8351,21 @@ WHERE        (isLoaded IS NULL)</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="189,42"
+          Id="Package\Load airports' atributes"
+          TopLeft="110,140" />
+        <NodeLayout
           Size="208,42"
           Id="Package\Load airports to main table"
           TopLeft="114,56" />
         <NodeLayout
-          Size="189,42"
-          Id="Package\Load airports' atributes"
-          TopLeft="110,140" />
+          Size="202,42"
+          Id="Package\Load routes to main table"
+          TopLeft="353,139" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Update isLoaded"
+          TopLeft="114,237" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="218,98">
@@ -8537,10 +8400,6 @@ WHERE        (isLoaded IS NULL)</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Update isLoaded"
-          TopLeft="114,237" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="204.5,182">
@@ -8575,308 +8434,14 @@ WHERE        (isLoaded IS NULL)</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="202,42"
-          Id="Package\Load routes to main table"
-          TopLeft="353,139" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Load airports to main table">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Load airports to main table\Extract data from csv"
-          TopLeft="120,9" />
-        <NodeLayout
-          Size="246,42"
-          Id="Package\Load airports to main table\Manual conversion of fields to float"
-          TopLeft="343,9" />
-        <EdgeLayout
-          Id="Package\Load airports to main table.Paths[Flat File Source Output]"
-          TopLeft="301,30">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="42,0"
-              Start="0,0"
-              End="34.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="34.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Load airports to main table\Compare with existing"
-          TopLeft="404,78" />
-        <EdgeLayout
-          Id="Package\Load airports to main table.Paths[Output 0]"
-          TopLeft="466,51">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="31,27"
-              Start="0,0"
-              End="31,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.5"
-                    Point2="0,13.5"
-                    Point3="4,13.5" />
-                  <mssgle:LineSegment
-                    End="27,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27,13.5"
-                    Point2="31,13.5"
-                    Point3="31,17.5" />
-                  <mssgle:LineSegment
-                    End="31,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="211,42"
-          Id="Package\Load airports to main table\Create column for dwh_key"
-          TopLeft="109,84" />
-        <EdgeLayout
-          Id="Package\Load airports to main table.Paths[Lookup No Match Output]"
-          TopLeft="404,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-84,0"
-              Start="0,0"
-              End="-76.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-76.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-94.05638671875,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="248,42"
-          Id="Package\Load airports to main table\insert into anchor table AP_Airports"
-          TopLeft="124,162" />
-        <EdgeLayout
-          Id="Package\Load airports to main table.Paths[Derived Column Output]"
-          TopLeft="214.5,126">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="33.5,36"
-              Start="0,0"
-              End="33.5,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14"
-                    Point2="0,18"
-                    Point3="4,18" />
-                  <mssgle:LineSegment
-                    End="29.5,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.5,18"
-                    Point2="33.5,18"
-                    Point3="33.5,22" />
-                  <mssgle:LineSegment
-                    End="33.5,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="249,42"
-          Id="Package\Load airports to main table\insert into Airport_Art artificial table"
-          TopLeft="312,330" />
-        <NodeLayout
-          Size="244,42"
-          Id="Package\Load airports to main table\Transform all bad nulls to good &quot;-&quot;"
-          TopLeft="162,233" />
-        <EdgeLayout
-          Id="Package\Load airports to main table.Paths[OLE DB Command Output]"
-          TopLeft="248,204">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="36,29"
-              Start="0,0"
-              End="36,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.5"
-                    Point2="0,14.5"
-                    Point3="4,14.5" />
-                  <mssgle:LineSegment
-                    End="32,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="32,14.5"
-                    Point2="36,14.5"
-                    Point3="36,18.5" />
-                  <mssgle:LineSegment
-                    End="36,21.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load airports to main table.Paths[Output 01]"
-          TopLeft="284,275">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="152.5,55"
-              Start="0,0"
-              End="152.5,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
-                  <mssgle:LineSegment
-                    End="148.5,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="148.5,27.5"
-                    Point2="152.5,27.5"
-                    Point3="152.5,31.5" />
-                  <mssgle:LineSegment
-                    End="152.5,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load airports to main table\Compare with existing">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Airports_Art]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load airports to main table\insert into Airport_Art artificial table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Load airports' atributes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="119,42"
-          Id="Package\Load airports' atributes\Octopus"
-          TopLeft="287,104" />
-        <NodeLayout
-          Size="117,42"
-          Id="Package\Load airports' atributes\Altitude"
-          TopLeft="41,254" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Load airports' atributes\Timezone"
-          TopLeft="467,313" />
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Load airports' atributes\Longitude"
-          TopLeft="320,315" />
-        <NodeLayout
-          Size="119,42"
-          Id="Package\Load airports' atributes\Latitude"
-          TopLeft="319,368" />
-        <NodeLayout
-          Size="105,42"
-          Id="Package\Load airports' atributes\ICAO"
-          TopLeft="187,369" />
-        <NodeLayout
-          Size="128,42"
-          Id="Package\Load airports' atributes\IATA_FAA"
-          TopLeft="177,316" />
-        <NodeLayout
-          Size="118,42"
-          Id="Package\Load airports' atributes\Country"
-          TopLeft="47,368" />
-        <NodeLayout
-          Size="100,42"
-          Id="Package\Load airports' atributes\DST"
-          TopLeft="177,257" />
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="92,42"
           Id="Package\Load airports' atributes\ID"
@@ -8886,181 +8451,91 @@ WHERE        (isLoaded IS NULL)</property>
           Id="Package\Load airports' atributes\Name"
           TopLeft="314,258" />
         <NodeLayout
-          Size="99,42"
-          Id="Package\Load airports' atributes\City"
-          TopLeft="48,312" />
+          Size="128,42"
+          Id="Package\Load airports' atributes\IATA_FAA"
+          TopLeft="177,316" />
+        <NodeLayout
+          Size="100,42"
+          Id="Package\Load airports' atributes\DST"
+          TopLeft="177,257" />
         <NodeLayout
           Size="175,42"
           Id="Package\Load airports' atributes\Change of encoding"
           TopLeft="273,32" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Load airports' atributes\Timezone"
+          TopLeft="467,313" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Load airports' atributes\City"
+          TopLeft="48,312" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Load airports' atributes\Latitude"
+          TopLeft="319,368" />
+        <NodeLayout
+          Size="105,42"
+          Id="Package\Load airports' atributes\ICAO"
+          TopLeft="187,369" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Load airports' atributes\Longitude"
+          TopLeft="320,315" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Load airports' atributes\Extract data from artif table"
+          TopLeft="14,33" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Load airports' atributes\Octopus"
+          TopLeft="287,104" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load airports' atributes\Tz_Zone"
+          TopLeft="464,369" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\Load airports' atributes\Country"
+          TopLeft="47,368" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\Load airports' atributes\Altitude"
+          TopLeft="41,254" />
         <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Data Conversion Output]"
-          TopLeft="360.5,74">
+          Id="Package\Load airports' atributes.Paths[Multicast Output 6]"
+          TopLeft="360.375,146">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14,30"
+              EndConnector="-120.875,223"
               Start="0,0"
-              End="-14,22.5">
+              End="-120.875,215.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11" />
+                    End="0,92.7835909631391" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11"
-                    Point2="0,15"
-                    Point3="-4,15" />
+                    Point1="0,92.7835909631391"
+                    Point2="0,96.7835909631391"
+                    Point3="-4,96.7835909631391" />
                   <mssgle:LineSegment
-                    End="-10,15" />
+                    End="-116.875,96.7835909631391" />
                   <mssgle:CubicBezierSegment
-                    Point1="-10,15"
-                    Point2="-14,15"
-                    Point3="-14,19" />
+                    Point1="-116.875,96.7835909631391"
+                    Point2="-120.875,96.7835909631391"
+                    Point3="-120.875,100.783590963139" />
                   <mssgle:LineSegment
-                    End="-14,22.5" />
+                    End="-120.875,215.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 3]"
-          TopLeft="308.076923076923,146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-208.576923076923,108"
-              Start="0,0"
-              End="-208.576923076923,100.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.2501193317423" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.2501193317423"
-                    Point2="0,28.2501193317423"
-                    Point3="-4,28.2501193317423" />
-                  <mssgle:LineSegment
-                    End="-204.576923076923,28.2501193317423" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-204.576923076923,28.2501193317423"
-                    Point2="-208.576923076923,28.2501193317423"
-                    Point3="-208.576923076923,32.2501193317423" />
-                  <mssgle:LineSegment
-                    End="-208.576923076923,100.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 1]"
-          TopLeft="309.5,146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-212,166"
-              Start="0,0"
-              End="-212,158.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5487804878049" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.5487804878049"
-                    Point2="0,45.5487804878049"
-                    Point3="-4,45.5487804878049" />
-                  <mssgle:LineSegment
-                    End="-208,45.5487804878049" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-208,45.5487804878049"
-                    Point2="-212,45.5487804878049"
-                    Point3="-212,49.5487804878049" />
-                  <mssgle:LineSegment
-                    End="-212,158.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 2]"
-          TopLeft="313.2,146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-207.2,222"
-              Start="0,0"
-              End="-207.2,214.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.8693115519253" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,63.8693115519253"
-                    Point2="0,67.8693115519253"
-                    Point3="-4,67.8693115519253" />
-                  <mssgle:LineSegment
-                    End="-203.2,67.8693115519253" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-203.2,67.8693115519253"
-                    Point2="-207.2,67.8693115519253"
-                    Point3="-207.2,71.8693115519253" />
-                  <mssgle:LineSegment
-                    End="-207.2,214.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 4]"
-          TopLeft="354.428571428571,146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-127.428571428571,111"
-              Start="0,0"
-              End="-127.428571428571,103.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5382636655948" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.5382636655948"
-                    Point2="0,51.5382636655948"
-                    Point3="-4,51.5382636655948" />
-                  <mssgle:LineSegment
-                    End="-123.428571428571,51.5382636655948" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-123.428571428571,51.5382636655948"
-                    Point2="-127.428571428571,51.5382636655948"
-                    Point3="-127.428571428571,55.5382636655948" />
-                  <mssgle:LineSegment
-                    End="-127.428571428571,103.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9094,153 +8569,153 @@ WHERE        (isLoaded IS NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 6]"
-          TopLeft="360.375,146">
+          Id="Package\Load airports' atributes.Paths[Multicast Output 4]"
+          TopLeft="354.428571428571,146">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-120.875,223"
+              EndConnector="-127.428571428571,111"
               Start="0,0"
-              End="-120.875,215.5">
+              End="-127.428571428571,103.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,92.7835909631391" />
+                    End="0,47.5382636655948" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,92.7835909631391"
-                    Point2="0,96.7835909631391"
-                    Point3="-4,96.7835909631391" />
+                    Point1="0,47.5382636655948"
+                    Point2="0,51.5382636655948"
+                    Point3="-4,51.5382636655948" />
                   <mssgle:LineSegment
-                    End="-116.875,96.7835909631391" />
+                    End="-123.428571428571,51.5382636655948" />
                   <mssgle:CubicBezierSegment
-                    Point1="-116.875,96.7835909631391"
-                    Point2="-120.875,96.7835909631391"
-                    Point3="-120.875,100.783590963139" />
+                    Point1="-123.428571428571,51.5382636655948"
+                    Point2="-127.428571428571,51.5382636655948"
+                    Point3="-127.428571428571,55.5382636655948" />
                   <mssgle:LineSegment
-                    End="-120.875,215.5" />
+                    End="-127.428571428571,103.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 7]"
-          TopLeft="379.15,146">
+          Id="Package\Load airports' atributes.Paths[Multicast Output 3]"
+          TopLeft="308.076923076923,146">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,222"
+              EndConnector="-208.576923076923,108"
               Start="0,0"
-              End="0,214.5">
+              End="-208.576923076923,100.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,214.5" />
+                    End="0,24.2501193317423" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2501193317423"
+                    Point2="0,28.2501193317423"
+                    Point3="-4,28.2501193317423" />
+                  <mssgle:LineSegment
+                    End="-204.576923076923,28.2501193317423" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-204.576923076923,28.2501193317423"
+                    Point2="-208.576923076923,28.2501193317423"
+                    Point3="-208.576923076923,32.2501193317423" />
+                  <mssgle:LineSegment
+                    End="-208.576923076923,100.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 8]"
-          TopLeft="386.583333333333,146">
+          Id="Package\Load airports' atributes.Paths[Multicast Output 2]"
+          TopLeft="313.2,146">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,169"
+              EndConnector="-207.2,222"
               Start="0,0"
-              End="0,161.5">
+              End="-207.2,214.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,161.5" />
+                    End="0,63.8693115519253" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.8693115519253"
+                    Point2="0,67.8693115519253"
+                    Point3="-4,67.8693115519253" />
+                  <mssgle:LineSegment
+                    End="-203.2,67.8693115519253" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-203.2,67.8693115519253"
+                    Point2="-207.2,67.8693115519253"
+                    Point3="-207.2,71.8693115519253" />
+                  <mssgle:LineSegment
+                    End="-207.2,214.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 9]"
-          TopLeft="350.769230769231,146">
+          Id="Package\Load airports' atributes.Paths[Multicast Output 12]"
+          TopLeft="392.75,146">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.2307692307692,112"
+              EndConnector="131.75,223"
               Start="0,0"
-              End="17.2307692307692,104.5">
+              End="131.75,215.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.9161917532685" />
+                    End="0,36.6151202749141" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,49.9161917532685"
-                    Point2="0,53.9161917532685"
-                    Point3="4,53.9161917532685" />
+                    Point1="0,36.6151202749141"
+                    Point2="0,40.6151202749141"
+                    Point3="4,40.6151202749141" />
                   <mssgle:LineSegment
-                    End="13.2307692307692,53.9161917532685" />
+                    End="127.75,40.6151202749141" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.2307692307692,53.9161917532685"
-                    Point2="17.2307692307692,53.9161917532685"
-                    Point3="17.2307692307692,57.9161917532685" />
+                    Point1="127.75,40.6151202749141"
+                    Point2="131.75,40.6151202749141"
+                    Point3="131.75,44.6151202749141" />
                   <mssgle:LineSegment
-                    End="17.2307692307692,104.5" />
+                    End="131.75,215.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 10]"
-          TopLeft="376.384615384615,146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="144.615384615385,116"
-              Start="0,0"
-              End="144.615384615385,108.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5498489425982" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.5498489425982"
-                    Point2="0,38.5498489425982"
-                    Point3="4,38.5498489425982" />
-                  <mssgle:LineSegment
-                    End="140.615384615385,38.5498489425982" />
-                  <mssgle:CubicBezierSegment
-                    Point1="140.615384615385,38.5498489425982"
-                    Point2="144.615384615385,38.5498489425982"
-                    Point3="144.615384615385,42.5498489425982" />
-                  <mssgle:LineSegment
-                    End="144.615384615385,108.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9274,51 +8749,119 @@ WHERE        (isLoaded IS NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Load airports' atributes\Tz_Zone"
-          TopLeft="464,369" />
         <EdgeLayout
-          Id="Package\Load airports' atributes.Paths[Multicast Output 12]"
-          TopLeft="392.75,146">
+          Id="Package\Load airports' atributes.Paths[Multicast Output 10]"
+          TopLeft="376.384615384615,146">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="131.75,223"
+              EndConnector="144.615384615385,116"
               Start="0,0"
-              End="131.75,215.5">
+              End="144.615384615385,108.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.6151202749141" />
+                    End="0,34.5498489425982" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.6151202749141"
-                    Point2="0,40.6151202749141"
-                    Point3="4,40.6151202749141" />
+                    Point1="0,34.5498489425982"
+                    Point2="0,38.5498489425982"
+                    Point3="4,38.5498489425982" />
                   <mssgle:LineSegment
-                    End="127.75,40.6151202749141" />
+                    End="140.615384615385,38.5498489425982" />
                   <mssgle:CubicBezierSegment
-                    Point1="127.75,40.6151202749141"
-                    Point2="131.75,40.6151202749141"
-                    Point3="131.75,44.6151202749141" />
+                    Point1="140.615384615385,38.5498489425982"
+                    Point2="144.615384615385,38.5498489425982"
+                    Point3="144.615384615385,42.5498489425982" />
                   <mssgle:LineSegment
-                    End="131.75,215.5" />
+                    End="144.615384615385,108.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="212,42"
-          Id="Package\Load airports' atributes\Extract data from artif table"
-          TopLeft="14,33" />
+        <EdgeLayout
+          Id="Package\Load airports' atributes.Paths[Multicast Output 1]"
+          TopLeft="309.5,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-212,166"
+              Start="0,0"
+              End="-212,158.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5487804878049" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.5487804878049"
+                    Point2="0,45.5487804878049"
+                    Point3="-4,45.5487804878049" />
+                  <mssgle:LineSegment
+                    End="-208,45.5487804878049" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-208,45.5487804878049"
+                    Point2="-212,45.5487804878049"
+                    Point3="-212,49.5487804878049" />
+                  <mssgle:LineSegment
+                    End="-212,158.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load airports' atributes.Paths[Data Conversion Output]"
+          TopLeft="360.5,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14,30"
+              Start="0,0"
+              End="-14,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="-4,15" />
+                  <mssgle:LineSegment
+                    End="-10,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10,15"
+                    Point2="-14,15"
+                    Point3="-14,19" />
+                  <mssgle:LineSegment
+                    End="-14,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load airports' atributes.Paths[OLE DB Source Output]"
           TopLeft="226,53.5">
@@ -9338,14 +8881,139 @@ WHERE        (isLoaded IS NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load airports' atributes.Paths[Multicast Output 9]"
+          TopLeft="350.769230769231,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.2307692307692,112"
+              Start="0,0"
+              End="17.2307692307692,104.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.9161917532685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.9161917532685"
+                    Point2="0,53.9161917532685"
+                    Point3="4,53.9161917532685" />
+                  <mssgle:LineSegment
+                    End="13.2307692307692,53.9161917532685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.2307692307692,53.9161917532685"
+                    Point2="17.2307692307692,53.9161917532685"
+                    Point3="17.2307692307692,57.9161917532685" />
+                  <mssgle:LineSegment
+                    End="17.2307692307692,104.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load airports' atributes.Paths[Multicast Output 8]"
+          TopLeft="386.583333333333,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,169"
+              Start="0,0"
+              End="0,161.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,161.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load airports' atributes.Paths[Multicast Output 7]"
+          TopLeft="379.15,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,222"
+              Start="0,0"
+              End="0,214.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,214.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load airports' atributes\Altitude">
+    design-time-name="Package\Load airports' atributes\ID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load airports' atributes\Name">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load airports' atributes\IATA_FAA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load airports' atributes\DST">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9371,7 +9039,7 @@ WHERE        (isLoaded IS NULL)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load airports' atributes\Longitude">
+    design-time-name="Package\Load airports' atributes\City">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9410,7 +9078,7 @@ WHERE        (isLoaded IS NULL)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load airports' atributes\IATA_FAA">
+    design-time-name="Package\Load airports' atributes\Longitude">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9423,59 +9091,7 @@ WHERE        (isLoaded IS NULL)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load airports' atributes\Country">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load airports' atributes\DST">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load airports' atributes\ID">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load airports' atributes\Name">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load airports' atributes\City">
+    design-time-name="Package\Load airports' atributes\Extract data from artif table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9501,7 +9117,20 @@ WHERE        (isLoaded IS NULL)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load airports' atributes\Extract data from artif table">
+    design-time-name="Package\Load airports' atributes\Country">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load airports' atributes\Altitude">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9514,58 +9143,264 @@ WHERE        (isLoaded IS NULL)</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Update isLoaded">
+    design-time-name="Package\Load airports to main table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="195,42"
-          Id="Package\Update isLoaded\Get data from artif table"
-          TopLeft="180,28" />
+          Size="248,42"
+          Id="Package\Load airports to main table\insert into anchor table AP_Airports"
+          TopLeft="124,162" />
         <NodeLayout
-          Size="161,42"
-          Id="Package\Update isLoaded\change IsLoaded"
-          TopLeft="185,174" />
+          Size="244,42"
+          Id="Package\Load airports to main table\Transform all bad nulls to good &quot;-&quot;"
+          TopLeft="162,233" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\Load airports to main table\Manual conversion of fields to float"
+          TopLeft="343,9" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Load airports to main table\Create column for dwh_key"
+          TopLeft="109,84" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package\Load airports to main table\insert into Airport_Art artificial table"
+          TopLeft="312,330" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Load airports to main table\Compare with existing"
+          TopLeft="404,78" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Load airports to main table\Extract data from csv"
+          TopLeft="120,9" />
         <EdgeLayout
-          Id="Package\Update isLoaded.Paths[OLE DB Source Output]"
-          TopLeft="277.5,70">
+          Id="Package\Load airports to main table.Paths[Output 01]"
+          TopLeft="284,275">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12,104"
+              EndConnector="152.5,55"
               Start="0,0"
-              End="-12,96.5">
+              End="152.5,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48" />
+                    End="0,23.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48"
-                    Point2="0,52"
-                    Point3="-4,52" />
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
                   <mssgle:LineSegment
-                    End="-8,52" />
+                    End="148.5,27.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-8,52"
-                    Point2="-12,52"
-                    Point3="-12,56" />
+                    Point1="148.5,27.5"
+                    Point2="152.5,27.5"
+                    Point3="152.5,31.5" />
                   <mssgle:LineSegment
-                    End="-12,96.5" />
+                    End="152.5,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load airports to main table.Paths[Output 0]"
+          TopLeft="466,51">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,27"
+              Start="0,0"
+              End="31,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.5"
+                    Point2="0,13.5"
+                    Point3="4,13.5" />
+                  <mssgle:LineSegment
+                    End="27,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27,13.5"
+                    Point2="31,13.5"
+                    Point3="31,17.5" />
+                  <mssgle:LineSegment
+                    End="31,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load airports to main table.Paths[OLE DB Command Output]"
+          TopLeft="248,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36,29"
+              Start="0,0"
+              End="36,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="4,14.5" />
+                  <mssgle:LineSegment
+                    End="32,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32,14.5"
+                    Point2="36,14.5"
+                    Point3="36,18.5" />
+                  <mssgle:LineSegment
+                    End="36,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load airports to main table.Paths[Lookup No Match Output]"
+          TopLeft="404,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-84,0"
+              Start="0,0"
+              End="-76.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-76.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.05638671875,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load airports to main table.Paths[Flat File Source Output]"
+          TopLeft="301,30">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42,0"
+              Start="0,0"
+              End="34.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load airports to main table.Paths[Derived Column Output]"
+          TopLeft="214.5,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.5,36"
+              Start="0,0"
+              End="33.5,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="29.5,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.5,18"
+                    Point2="33.5,18"
+                    Point3="33.5,22" />
+                  <mssgle:LineSegment
+                    End="33.5,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Update isLoaded\Get data from artif table">
+    design-time-name="Package\Load airports to main table\insert into Airport_Art artificial table">
     <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load airports to main table\Compare with existing">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Airports_Art]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -9579,22 +9414,70 @@ WHERE        (isLoaded IS NULL)</property>
         <NodeLayout
           Size="165,42"
           Id="Package\Load routes to main table\Routes source file"
-          TopLeft="91,40" />
+          TopLeft="255,31" />
         <NodeLayout
-          Size="186,42"
-          Id="Package\Load routes to main table\Compare with existing"
-          TopLeft="453,22" />
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Load routes to main table\Load to artificial table"
-          TopLeft="217,339" />
+          Size="175,42"
+          Id="Package\Load routes to main table\Create keys for dwh"
+          TopLeft="292,159" />
         <NodeLayout
           Size="193,42"
           Id="Package\Load routes to main table\create dwh_key column"
-          TopLeft="388,136" />
+          TopLeft="571,159" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load routes to main table\Script Component"
+          TopLeft="385,292" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Load routes to main table\Load to artificial table"
+          TopLeft="400,362" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Load routes to main table\Compare with existing"
+          TopLeft="636,45" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Load routes to main table\Сhange of encoding"
+          TopLeft="558,238" />
+        <EdgeLayout
+          Id="Package\Load routes to main table.Paths[Output 0]"
+          TopLeft="467.5,334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24,28"
+              Start="0,0"
+              End="24,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="20,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20,14"
+                    Point2="24,14"
+                    Point3="24,18" />
+                  <mssgle:LineSegment
+                    End="24,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4,19,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load routes to main table.Paths[Lookup No Match Output]"
-          TopLeft="546,64">
+          TopLeft="729,87">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9628,13 +9511,9 @@ WHERE        (isLoaded IS NULL)</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Load routes to main table\Create keys for dwh"
-          TopLeft="109,136" />
         <EdgeLayout
           Id="Package\Load routes to main table.Paths[Derived Column Output]"
-          TopLeft="388,157">
+          TopLeft="571,180">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9654,13 +9533,9 @@ WHERE        (isLoaded IS NULL)</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Load routes to main table\Сhange of encoding"
-          TopLeft="375,215" />
         <EdgeLayout
           Id="Package\Load routes to main table.Paths[OLE DB Command Output]"
-          TopLeft="196.5,178">
+          TopLeft="379.5,201">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9689,16 +9564,14 @@ WHERE        (isLoaded IS NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="125,23.5,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Load routes to main table\Script Component"
-          TopLeft="202,269" />
         <EdgeLayout
           Id="Package\Load routes to main table.Paths[Data Conversion Output]"
-          TopLeft="375,236">
+          TopLeft="558,259">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9721,145 +9594,71 @@ WHERE        (isLoaded IS NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-98.5,-22,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load routes to main table.Paths[Output 0]"
-          TopLeft="284.5,311">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="24,28"
-              Start="0,0"
-              End="24,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="4,14" />
-                  <mssgle:LineSegment
-                    End="20,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20,14"
-                    Point2="24,14"
-                    Point3="24,18" />
-                  <mssgle:LineSegment
-                    End="24,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Update isLoaded">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="158,42"
-          Id="Package\Load routes to main table\Data Conversion"
-          TopLeft="237,85" />
+          Size="161,42"
+          Id="Package\Update isLoaded\change IsLoaded"
+          TopLeft="185,174" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Update isLoaded\Get data from artif table"
+          TopLeft="180,28" />
         <EdgeLayout
-          Id="Package\Load routes to main table.Paths[Flat File Source Output]"
-          TopLeft="256,61">
+          Id="Package\Update isLoaded.Paths[OLE DB Source Output]"
+          TopLeft="277.5,70">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35,24"
+              EndConnector="-12,104"
               Start="0,0"
-              End="35,16.5">
+              End="-12,96.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="31,0" />
+                    End="0,48" />
                   <mssgle:CubicBezierSegment
-                    Point1="31,0"
-                    Point2="35,0"
-                    Point3="35,4" />
+                    Point1="0,48"
+                    Point2="0,52"
+                    Point3="-4,52" />
                   <mssgle:LineSegment
-                    End="35,16.5" />
+                    End="-8,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8,52"
+                    Point2="-12,52"
+                    Point3="-12,56" />
+                  <mssgle:LineSegment
+                    End="-12,96.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load routes to main table.Paths[Data Conversion Output1]"
-          TopLeft="395,106">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="58,-63"
-              Start="0,0"
-              End="50.5,-63">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="25,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25,0"
-                    Point2="29,0"
-                    Point3="29,-4" />
-                  <mssgle:LineSegment
-                    End="29,-59" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29,-59"
-                    Point2="29,-63"
-                    Point3="33,-63" />
-                  <mssgle:LineSegment
-                    End="50.5,-63" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load routes to main table\Compare with existing">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Routes_Art]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load routes to main table\Load to artificial table">
+    design-time-name="Package\Update isLoaded\Get data from artif table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
