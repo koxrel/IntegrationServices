@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="230"
-  DTS:VersionGUID="{9D1F8D2C-AA5E-4509-BCB0-F71FAA8E69C0}">
+  DTS:VersionBuild="232"
+  DTS:VersionGUID="{36B1BDB2-26D3-4B67-901E-74823E60E101}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -744,7 +744,7 @@
       DTS:ObjectName="Excel Connection Manager 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Y:\Downloads\dataDW 2\data.xls;Extended Properties=&quot;Excel 8.0;HDR=NO&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Y:\Downloads\dataDW 2\data.xls;Extended Properties=&quot;EXCEL 8.0;HDR=NO&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -22858,6 +22858,28 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="339,478.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157,0"
+              Start="0,0"
+              End="149.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="149.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 15]"
           TopLeft="305,415">
           <EdgeLayout.Curve>
@@ -23131,28 +23153,6 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
                     Point3="-41,4" />
                   <mssgle:LineSegment
                     End="-41,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="339,478.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="157,0"
-              Start="0,0"
-              End="149.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="149.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -23578,7 +23578,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
     design-time-name="Package\Load airports' attributes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="92,42"
           Id="Package\Load airports' attributes\ID"
@@ -23670,7 +23670,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23704,7 +23706,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23738,7 +23742,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23772,7 +23778,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23806,7 +23814,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23840,7 +23850,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23874,7 +23886,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23908,7 +23922,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23942,7 +23958,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23976,7 +23994,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23998,7 +24018,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24032,7 +24054,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24054,7 +24078,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24076,7 +24102,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -25023,115 +25051,41 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="117,42"
-          Id="Package\load csv\fact csv"
-          TopLeft="40,26" />
+          Size="113,42"
+          Id="Package\load csv\ERdwh"
+          TopLeft="435,273" />
         <NodeLayout
           Size="130,42"
           Id="Package\load csv\to unicode"
           TopLeft="215,26" />
         <NodeLayout
-          Size="102,42"
-          Id="Package\load csv\float"
-          TopLeft="64,94" />
-        <EdgeLayout
-          Id="Package\load csv.Paths[Flat File Source Output]"
-          TopLeft="157,47">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="58,0"
-              Start="0,0"
-              End="50.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="50.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\load csv.Paths[Data Conversion Output]"
-          TopLeft="280,68">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-165,26"
-              Start="0,0"
-              End="-165,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9"
-                    Point2="0,13"
-                    Point3="-4,13" />
-                  <mssgle:LineSegment
-                    End="-161,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-161,13"
-                    Point2="-165,13"
-                    Point3="-165,17" />
-                  <mssgle:LineSegment
-                    End="-165,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="93,42"
-          Id="Package\load csv\AL"
-          TopLeft="60,170" />
-        <EdgeLayout
-          Id="Package\load csv.Paths[Output 0]"
-          TopLeft="115,136">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-8.5,34"
-              Start="0,0"
-              End="-8.5,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13"
-                    Point2="0,17"
-                    Point3="-4,17" />
-                  <mssgle:LineSegment
-                    End="-4.5,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.5,17"
-                    Point2="-8.5,17"
-                    Point3="-8.5,21" />
-                  <mssgle:LineSegment
-                    End="-8.5,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="141,42"
+          Id="Package\load csv\load to DWH"
+          TopLeft="373,149" />
         <NodeLayout
           Size="102,42"
           Id="Package\load csv\erAL"
           TopLeft="211,136" />
+        <NodeLayout
+          Size="103,42"
+          Id="Package\load csv\erRT"
+          TopLeft="206,308" />
+        <NodeLayout
+          Size="88,42"
+          Id="Package\load csv\rt"
+          TopLeft="55,277" />
+        <NodeLayout
+          Size="102,42"
+          Id="Package\load csv\float"
+          TopLeft="64,94" />
+        <NodeLayout
+          Size="93,42"
+          Id="Package\load csv\AL"
+          TopLeft="60,170" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\load csv\fact csv"
+          TopLeft="40,26" />
         <EdgeLayout
           Id="Package\load csv.Paths[Lookup Error Output]"
           TopLeft="153,191">
@@ -25168,118 +25122,102 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="88,42"
-          Id="Package\load csv\rt"
-          TopLeft="55,277" />
         <EdgeLayout
-          Id="Package\load csv.Paths[Lookup Match Output]"
-          TopLeft="102.75,212">
+          Id="Package\load csv.Paths[Flat File Source Output]"
+          TopLeft="157,47">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65"
+              EndConnector="58,0"
               Start="0,0"
-              End="0,57.5">
+              End="50.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.5" />
+                    End="50.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,22.9453125,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="103,42"
-          Id="Package\load csv\erRT"
-          TopLeft="206,308" />
         <EdgeLayout
-          Id="Package\load csv.Paths[Lookup Error Output1]"
-          TopLeft="143,298">
+          Id="Package\load csv.Paths[Data Conversion Output]"
+          TopLeft="280,68">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="63,31"
+              EndConnector="-165,26"
               Start="0,0"
-              End="55.5,31">
+              End="-165,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="27.5,0" />
+                    End="0,9" />
                   <mssgle:CubicBezierSegment
-                    Point1="27.5,0"
-                    Point2="31.5,0"
-                    Point3="31.5,4" />
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="-4,13" />
                   <mssgle:LineSegment
-                    End="31.5,27" />
+                    End="-161,13" />
                   <mssgle:CubicBezierSegment
-                    Point1="31.5,27"
-                    Point2="31.5,31"
-                    Point3="35.5,31" />
+                    Point1="-161,13"
+                    Point2="-165,13"
+                    Point3="-165,17" />
                   <mssgle:LineSegment
-                    End="55.5,31" />
+                    End="-165,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-14.36638671875,-17.609375,91.7327734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="141,42"
-          Id="Package\load csv\load to DWH"
-          TopLeft="373,149" />
         <EdgeLayout
-          Id="Package\load csv.Paths[Lookup Match Output1]"
-          TopLeft="112.333333333333,277">
+          Id="Package\load csv.Paths[Output 0]"
+          TopLeft="115,136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="331.166666666667,-86"
+              EndConnector="-8.5,34"
               Start="0,0"
-              End="331.166666666667,-78.5">
+              End="-8.5,26.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-31.3214285714286" />
+                    End="0,13" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-31.3214285714286"
-                    Point2="0,-35.3214285714286"
-                    Point3="4,-35.3214285714286" />
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="-4,17" />
                   <mssgle:LineSegment
-                    End="327.166666666667,-35.3214285714286" />
+                    End="-4.5,17" />
                   <mssgle:CubicBezierSegment
-                    Point1="327.166666666667,-35.3214285714286"
-                    Point2="331.166666666667,-35.3214285714286"
-                    Point3="331.166666666667,-39.3214285714286" />
+                    Point1="-4.5,17"
+                    Point2="-8.5,17"
+                    Point3="-8.5,21" />
                   <mssgle:LineSegment
-                    End="331.166666666667,-78.5" />
+                    End="-8.5,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="117.391946614583,-30.3214285714286,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\load csv\ERdwh"
-          TopLeft="435,273" />
         <EdgeLayout
           Id="Package\load csv.Paths[OLE DB Destination Error Output]"
           TopLeft="465.666666666667,191">
@@ -25316,86 +25254,205 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load csv.Paths[Lookup Match Output1]"
+          TopLeft="112.333333333333,277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="331.166666666667,-86"
+              Start="0,0"
+              End="331.166666666667,-78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-31.3214285714286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-31.3214285714286"
+                    Point2="0,-35.3214285714286"
+                    Point3="4,-35.3214285714286" />
+                  <mssgle:LineSegment
+                    End="327.166666666667,-35.3214285714286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="327.166666666667,-35.3214285714286"
+                    Point2="331.166666666667,-35.3214285714286"
+                    Point3="331.166666666667,-39.3214285714286" />
+                  <mssgle:LineSegment
+                    End="331.166666666667,-78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="117.391946614583,-30.3214285714286,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load csv.Paths[Lookup Match Output]"
+          TopLeft="102.75,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,22.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load csv.Paths[Lookup Error Output1]"
+          TopLeft="143,298">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63,31"
+              Start="0,0"
+              End="55.5,31">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5,0"
+                    Point2="31.5,0"
+                    Point3="31.5,4" />
+                  <mssgle:LineSegment
+                    End="31.5,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.5,27"
+                    Point2="31.5,31"
+                    Point3="35.5,31" />
+                  <mssgle:LineSegment
+                    End="55.5,31" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-14.36638671875,-17.609375,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\load csv\load to DWH">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\load csv\rt">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Routes_Art]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\load csv\AL">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Airline_Art]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load excel">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Load excel\Load from excel"
-          TopLeft="59,49" />
+          Size="165,42"
+          Id="Package\Load excel\Script Component"
+          TopLeft="42,182" />
+        <NodeLayout
+          Size="88,42"
+          Id="Package\Load excel\rt"
+          TopLeft="72,348" />
+        <NodeLayout
+          Size="105,42"
+          Id="Package\Load excel\er AL"
+          TopLeft="244,234" />
         <NodeLayout
           Size="158,42"
           Id="Package\Load excel\Data Conversion"
           TopLeft="42,116" />
-        <EdgeLayout
-          Id="Package\Load excel.Paths[Excel Source Output]"
-          TopLeft="137,91">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-16,25"
-              Start="0,0"
-              End="-16,17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.5"
-                    Point2="0,12.5"
-                    Point3="-4,12.5" />
-                  <mssgle:LineSegment
-                    End="-12,12.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12,12.5"
-                    Point2="-16,12.5"
-                    Point3="-16,16.5" />
-                  <mssgle:LineSegment
-                    End="-16,17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="165,42"
-          Id="Package\Load excel\Script Component"
-          TopLeft="42,182" />
-        <EdgeLayout
-          Id="Package\Load excel.Paths[Data Conversion Output]"
-          TopLeft="122.75,158">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24"
-              Start="0,0"
-              End="0,16.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="142,42"
+          Id="Package\Load excel\ERROR DWH"
+          TopLeft="499,261" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Load excel\OLE DB Destination"
+          TopLeft="373,158" />
         <NodeLayout
           Size="89,42"
           Id="Package\Load excel\al"
           TopLeft="72,259" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load excel\Load from excel"
+          TopLeft="59,49" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Load excel\er RT"
+          TopLeft="237,303" />
         <EdgeLayout
           Id="Package\Load excel.Paths[Output 0]"
           TopLeft="124.5,224">
@@ -25430,158 +25487,6 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="105,42"
-          Id="Package\Load excel\er AL"
-          TopLeft="244,234" />
-        <EdgeLayout
-          Id="Package\Load excel.Paths[Lookup Error Output]"
-          TopLeft="161,280">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="83,-25"
-              Start="0,0"
-              End="75.5,-25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="37.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37.5,0"
-                    Point2="41.5,0"
-                    Point3="41.5,-4" />
-                  <mssgle:LineSegment
-                    End="41.5,-21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.5,-21"
-                    Point2="41.5,-25"
-                    Point3="45.5,-25" />
-                  <mssgle:LineSegment
-                    End="75.5,-25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-4.36638671875001,1,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="88,42"
-          Id="Package\Load excel\rt"
-          TopLeft="72,348" />
-        <EdgeLayout
-          Id="Package\Load excel.Paths[Lookup Match Output]"
-          TopLeft="116.25,301">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47"
-              Start="0,0"
-              End="0,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Load excel\er RT"
-          TopLeft="237,303" />
-        <EdgeLayout
-          Id="Package\Load excel.Paths[Lookup Error Output1]"
-          TopLeft="160,369">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="77,-45"
-              Start="0,0"
-              End="69.5,-45">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="34.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34.5,0"
-                    Point2="38.5,0"
-                    Point3="38.5,-4" />
-                  <mssgle:LineSegment
-                    End="38.5,-41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.5,-41"
-                    Point2="38.5,-45"
-                    Point3="42.5,-45" />
-                  <mssgle:LineSegment
-                    End="69.5,-45" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-7.36638671875001,1,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Load excel\OLE DB Destination"
-          TopLeft="373,158" />
-        <EdgeLayout
-          Id="Package\Load excel.Paths[Lookup Match Output1]"
-          TopLeft="129.333333333333,348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="330.166666666667,-148"
-              Start="0,0"
-              End="330.166666666667,-140.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-56.7857142857143" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-56.7857142857143"
-                    Point2="0,-60.7857142857143"
-                    Point3="4,-60.7857142857143" />
-                  <mssgle:LineSegment
-                    End="326.166666666667,-60.7857142857143" />
-                  <mssgle:CubicBezierSegment
-                    Point1="326.166666666667,-60.7857142857143"
-                    Point2="330.166666666667,-60.7857142857143"
-                    Point3="330.166666666667,-64.7857142857143" />
-                  <mssgle:LineSegment
-                    End="330.166666666667,-140.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="116.891946614583,-55.7857142857143,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="142,42"
-          Id="Package\Load excel\ERROR DWH"
-          TopLeft="499,261" />
         <EdgeLayout
           Id="Package\Load excel.Paths[OLE DB Destination Error Output]"
           TopLeft="487,200">
@@ -25618,14 +25523,274 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load excel.Paths[Lookup Match Output1]"
+          TopLeft="129.333333333333,348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="330.166666666667,-148"
+              Start="0,0"
+              End="330.166666666667,-140.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-56.7857142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-56.7857142857143"
+                    Point2="0,-60.7857142857143"
+                    Point3="4,-60.7857142857143" />
+                  <mssgle:LineSegment
+                    End="326.166666666667,-60.7857142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="326.166666666667,-60.7857142857143"
+                    Point2="330.166666666667,-60.7857142857143"
+                    Point3="330.166666666667,-64.7857142857143" />
+                  <mssgle:LineSegment
+                    End="330.166666666667,-140.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="116.891946614584,-55.7857142857143,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load excel.Paths[Lookup Match Output]"
+          TopLeft="116.25,301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load excel.Paths[Lookup Error Output1]"
+          TopLeft="160,369">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77,-45"
+              Start="0,0"
+              End="69.5,-45">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.5,0"
+                    Point2="38.5,0"
+                    Point3="38.5,-4" />
+                  <mssgle:LineSegment
+                    End="38.5,-41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.5,-41"
+                    Point2="38.5,-45"
+                    Point3="42.5,-45" />
+                  <mssgle:LineSegment
+                    End="69.5,-45" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.36638671875001,1,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load excel.Paths[Lookup Error Output]"
+          TopLeft="161,280">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,-25"
+              Start="0,0"
+              End="75.5,-25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.5,0"
+                    Point2="41.5,0"
+                    Point3="41.5,-4" />
+                  <mssgle:LineSegment
+                    End="41.5,-21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.5,-21"
+                    Point2="41.5,-25"
+                    Point3="45.5,-25" />
+                  <mssgle:LineSegment
+                    End="75.5,-25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.36638671875001,1,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load excel.Paths[Excel Source Output]"
+          TopLeft="137,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16,25"
+              Start="0,0"
+              End="-16,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.5"
+                    Point2="0,12.5"
+                    Point3="-4,12.5" />
+                  <mssgle:LineSegment
+                    End="-12,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12,12.5"
+                    Point2="-16,12.5"
+                    Point3="-16,16.5" />
+                  <mssgle:LineSegment
+                    End="-16,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load excel.Paths[Data Conversion Output]"
+          TopLeft="122.75,158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load excel\rt">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Routes_Art]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load excel\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load excel\al">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Airline_Art]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load excel\Load from excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load routes' attributes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="131,42"
           Id="Package\Load routes' attributes\Equipment"
@@ -25709,7 +25874,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25743,7 +25910,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25777,7 +25946,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25811,7 +25982,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25845,7 +26018,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25879,7 +26054,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25913,7 +26090,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25947,7 +26126,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25981,7 +26162,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26015,7 +26198,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26049,7 +26234,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26083,7 +26270,9 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -26786,137 +26975,6 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\load csv\AL">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Airline_Art]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load excel\Load from excel">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load excel\al">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Airline_Art]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load excel\rt">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Routes_Art]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load excel\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\load csv\rt">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Routes_Art]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\load csv\load to DWH">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
