@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="232"
-  DTS:VersionGUID="{36B1BDB2-26D3-4B67-901E-74823E60E101}">
+  DTS:VersionBuild="234"
+  DTS:VersionGUID="{A1C94C07-94CA-4DDB-8B3B-EE541ACD7BE9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -12439,13 +12439,13 @@ where [refTable].[IATA] = ?</property>
                       cachedDataType="i4"
                       cachedName="ErrorCode"
                       externalMetadataColumnId="Package\load csv\ERdwh.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\load csv\load to DWH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      lineageId="Package\load csv\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]" />
                     <inputColumn
                       refId="Package\load csv\ERdwh.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
                       externalMetadataColumnId="Package\load csv\ERdwh.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\load csv\load to DWH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      lineageId="Package\load csv\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
                     <inputColumn
                       refId="Package\load csv\ERdwh.Inputs[Flat File Destination Input].Columns[Timestamp]"
                       cachedDataType="dbTimeStamp"
@@ -13987,7 +13987,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                 <input
                   refId="Package\load csv\load to DWH.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="RedirectRow"
+                  errorRowDisposition="IgnoreFailure"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -14081,6 +14081,248 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       refId="Package\load csv\load to DWH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\load csv\load to DWH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load csv\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        AL_ID_airline, RT_ID_route, [Timestamp], NumberOfPassengers, Accidents, CONVERT(VARCHAR(50), Ticketprice, 3) AS Expr1, Key_FACTS
+FROM            AL_DWHline_RT_DWHroutes</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT        AL_ID_airline, RT_ID_route, [Timestamp], NumberOfPassengers, Accidents, CONVERT(VARCHAR(50), Ticketprice, 3) AS Expr1, Key_FACTS
+FROM            AL_DWHline_RT_DWHroutes) [refTable]
+where [refTable].[Timestamp] = ? and [refTable].[NumberOfPassengers] = ? and [refTable].[Expr1] = ? and [refTable].[Accidents] = ? and [refTable].[AL_ID_airline] = ? and [refTable].[RT_ID_route] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AL_ID_airline" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RT_ID_route" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Timestamp" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumberOfPassengers" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Accidents" dataType="DT_WSTR" length="1" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Expr1" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Key_FACTS" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\load csv\fact csv.Outputs[Flat File Source Output].Columns[Timestamp]};#{Package\load csv\fact csv.Outputs[Flat File Source Output].Columns[Passengers_Qty]};#{Package\load csv\fact csv.Outputs[Flat File Source Output].Columns[Mean_Price]};#{Package\load csv\to unicode.Outputs[Data Conversion Output].Columns[Acc]};#{Package\load csv\AL.Outputs[Lookup Match Output].Columns[Key_AL]};#{Package\load csv\rt.Outputs[Lookup Match Output].Columns[Key_RT]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load csv\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[EKATERINAZHCDB9\ZHELANDE.FlightDWHv2.0]"
+                  connectionManagerRefId="Package.ConnectionManagers[EKATERINAZHCDB9\ZHELANDE.FlightDWHv2.0]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\load csv\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load csv\Lookup.Inputs[Lookup Input].Columns[Key_AL]"
+                      cachedDataType="i4"
+                      cachedName="Key_AL"
+                      lineageId="Package\load csv\AL.Outputs[Lookup Match Output].Columns[Key_AL]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">AL_ID_airline</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load csv\Lookup.Inputs[Lookup Input].Columns[Key_RT]"
+                      cachedDataType="i4"
+                      cachedName="Key_RT"
+                      lineageId="Package\load csv\rt.Outputs[Lookup Match Output].Columns[Key_RT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">RT_ID_route</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load csv\Lookup.Inputs[Lookup Input].Columns[Timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Timestamp"
+                      lineageId="Package\load csv\fact csv.Outputs[Flat File Source Output].Columns[Timestamp]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Timestamp</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load csv\Lookup.Inputs[Lookup Input].Columns[Acc]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Acc"
+                      lineageId="Package\load csv\to unicode.Outputs[Data Conversion Output].Columns[Acc]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Accidents</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load csv\Lookup.Inputs[Lookup Input].Columns[Mean_Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Mean_Price"
+                      lineageId="Package\load csv\fact csv.Outputs[Flat File Source Output].Columns[Mean_Price]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Expr1</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load csv\Lookup.Inputs[Lookup Input].Columns[Passengers_Qty]"
+                      cachedDataType="i4"
+                      cachedName="Passengers_Qty"
+                      lineageId="Package\load csv\fact csv.Outputs[Flat File Source Output].Columns[Passengers_Qty]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">NumberOfPassengers</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load csv\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\load csv\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load csv\Lookup.Outputs[Lookup Match Output].Columns[Key_FACTS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\load csv\Lookup.Outputs[Lookup Match Output].Columns[Key_FACTS]"
+                      name="Key_FACTS"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Key_FACTS</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load csv\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\load csv\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load csv\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\load csv\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load csv\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load csv\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load csv\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load csv\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -14438,20 +14680,25 @@ where [refTable].[Sour Ap] = ? and [refTable].[Dest AP] = ? and [refTable].[AL] 
               name="Lookup Error Output"
               startId="Package\load csv\rt.Outputs[Lookup Error Output]" />
             <path
+              refId="Package\load csv.Paths[Lookup Error Output2]"
+              endId="Package\load csv\ERdwh.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\load csv\Lookup.Outputs[Lookup Error Output]" />
+            <path
               refId="Package\load csv.Paths[Lookup Match Output]"
               endId="Package\load csv\rt.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\load csv\AL.Outputs[Lookup Match Output]" />
             <path
               refId="Package\load csv.Paths[Lookup Match Output1]"
-              endId="Package\load csv\load to DWH.Inputs[OLE DB Destination Input]"
+              endId="Package\load csv\Lookup.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\load csv\rt.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\load csv.Paths[OLE DB Destination Error Output]"
-              endId="Package\load csv\ERdwh.Inputs[Flat File Destination Input]"
-              name="OLE DB Destination Error Output"
-              startId="Package\load csv\load to DWH.Outputs[OLE DB Destination Error Output]" />
+              refId="Package\load csv.Paths[Lookup No Match Output]"
+              endId="Package\load csv\load to DWH.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\load csv\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\load csv.Paths[Output 0]"
               endId="Package\load csv\AL.Inputs[Lookup Input]"
@@ -14714,7 +14961,8 @@ where [refTable].[IATA] = ?</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[strMean_Price]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="50"
@@ -15043,12 +15291,12 @@ where [refTable].[IATA] = ?</property>
               </inputs>
             </component>
             <component
-              refId="Package\Load excel\ERROR DWH"
+              refId="Package\Load excel\Flat File Destination"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Flat File Destination"
               localeId="1049"
-              name="ERROR DWH">
+              name="Flat File Destination">
               <properties>
                 <property
                   dataType="System.Boolean"
@@ -15062,136 +15310,136 @@ where [refTable].[IATA] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load excel\ERROR DWH.Connections[FlatFileConnection]"
+                  refId="Package\Load excel\Flat File Destination.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[errDWH]"
                   connectionManagerRefId="Package.ConnectionManagers[errDWH]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input]"
+                  refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input]"
                   hasSideEffects="true"
                   name="Flat File Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[TIME]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[TIME]"
                       cachedDataType="dbTimeStamp"
                       cachedName="TIME"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[TIME]"
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TIME]"
                       lineageId="Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[TIME]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[PASS]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[PASS]"
                       cachedDataType="i4"
                       cachedName="PASS"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[PASS]"
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PASS]"
                       lineageId="Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[PASS]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[MP]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[MP]"
                       cachedDataType="r8"
                       cachedName="MP"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[MP]"
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[MP]"
                       lineageId="Package\Load excel\Script Component.Outputs[Output 0].Columns[MP]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[AL]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[AL]"
                       cachedDataType="wstr"
                       cachedLength="2"
                       cachedName="AL"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[AL]"
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AL]"
                       lineageId="Package\Load excel\Script Component.Outputs[Output 0].Columns[AL]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[DEST]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[DEST]"
                       cachedDataType="wstr"
                       cachedLength="5"
                       cachedName="DEST"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[DEST]"
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DEST]"
                       lineageId="Package\Load excel\Script Component.Outputs[Output 0].Columns[DEST]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[SOUR]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[SOUR]"
                       cachedDataType="wstr"
                       cachedLength="5"
                       cachedName="SOUR"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[SOUR]"
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SOUR]"
                       lineageId="Package\Load excel\Script Component.Outputs[Output 0].Columns[SOUR]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[ACC]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[ACC]"
                       cachedDataType="wstr"
                       cachedLength="1"
                       cachedName="ACC"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[ACC]"
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ACC]"
                       lineageId="Package\Load excel\Script Component.Outputs[Output 0].Columns[ACC]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[Key_AL]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[Key_AL]"
                       cachedDataType="i4"
                       cachedName="Key_AL"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[Key_AL]"
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Key_AL]"
                       lineageId="Package\Load excel\al.Outputs[Lookup Match Output].Columns[Key_AL]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[Key_RT]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[Key_RT]"
                       cachedDataType="i4"
                       cachedName="Key_RT"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[Key_RT]"
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Key_RT]"
                       lineageId="Package\Load excel\rt.Outputs[Lookup Match Output].Columns[Key_RT]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Load excel\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Load excel\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]" />
                     <inputColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Load excel\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      externalMetadataColumnId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Load excel\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[TIME]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TIME]"
                       dataType="dbTimeStamp"
                       name="TIME" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[PASS]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PASS]"
                       dataType="i4"
                       name="PASS" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[MP]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[MP]"
                       dataType="r8"
                       name="MP" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[AL]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AL]"
                       dataType="wstr"
                       length="2"
                       name="AL" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[DEST]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DEST]"
                       dataType="wstr"
                       length="5"
                       name="DEST" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[SOUR]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SOUR]"
                       dataType="wstr"
                       length="5"
                       name="SOUR" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[ACC]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ACC]"
                       dataType="wstr"
                       length="1"
                       name="ACC" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[Key_AL]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Key_AL]"
                       dataType="i4"
                       name="Key_AL" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[Key_RT]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Key_RT]"
                       dataType="i4"
                       name="Key_RT" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
                       dataType="i4"
                       name="ErrorCode" />
                     <externalMetadataColumn
-                      refId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      refId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
                       dataType="i4"
                       name="ErrorColumn" />
                   </externalMetadataColumns>
@@ -15417,6 +15665,248 @@ where [refTable].[IATA] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Load excel\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        AL_ID_airline, RT_ID_route, [Timestamp], NumberOfPassengers, Accidents, CONVERT(VARCHAR(50), Ticketprice, 3) AS Expr1, Key_FACTS
+FROM            AL_DWHline_RT_DWHroutes</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT        AL_ID_airline, RT_ID_route, [Timestamp], NumberOfPassengers, Accidents, CONVERT(VARCHAR(50), Ticketprice, 3) AS Expr1, Key_FACTS
+FROM            AL_DWHline_RT_DWHroutes) [refTable]
+where [refTable].[Timestamp] = ? and [refTable].[NumberOfPassengers] = ? and [refTable].[Expr1] = ? and [refTable].[Accidents] = ? and [refTable].[AL_ID_airline] = ? and [refTable].[RT_ID_route] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AL_ID_airline" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RT_ID_route" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Timestamp" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumberOfPassengers" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Accidents" dataType="DT_WSTR" length="1" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Expr1" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Key_FACTS" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[TIME]};#{Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[PASS]};#{Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[strMean_Price]};#{Package\Load excel\Script Component.Outputs[Output 0].Columns[ACC]};#{Package\Load excel\al.Outputs[Lookup Match Output].Columns[Key_AL]};#{Package\Load excel\rt.Outputs[Lookup Match Output].Columns[Key_RT]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load excel\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[EKATERINAZHCDB9\ZHELANDE.FlightDWHv2.0]"
+                  connectionManagerRefId="Package.ConnectionManagers[EKATERINAZHCDB9\ZHELANDE.FlightDWHv2.0]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load excel\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load excel\Lookup.Inputs[Lookup Input].Columns[Key_AL]"
+                      cachedDataType="i4"
+                      cachedName="Key_AL"
+                      lineageId="Package\Load excel\al.Outputs[Lookup Match Output].Columns[Key_AL]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">AL_ID_airline</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load excel\Lookup.Inputs[Lookup Input].Columns[Key_RT]"
+                      cachedDataType="i4"
+                      cachedName="Key_RT"
+                      lineageId="Package\Load excel\rt.Outputs[Lookup Match Output].Columns[Key_RT]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">RT_ID_route</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load excel\Lookup.Inputs[Lookup Input].Columns[TIME]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TIME"
+                      lineageId="Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[TIME]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Timestamp</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load excel\Lookup.Inputs[Lookup Input].Columns[PASS]"
+                      cachedDataType="i4"
+                      cachedName="PASS"
+                      lineageId="Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[PASS]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">NumberOfPassengers</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load excel\Lookup.Inputs[Lookup Input].Columns[strMean_Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="strMean_Price"
+                      lineageId="Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[strMean_Price]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Expr1</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load excel\Lookup.Inputs[Lookup Input].Columns[ACC]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="ACC"
+                      lineageId="Package\Load excel\Script Component.Outputs[Output 0].Columns[ACC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Accidents</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load excel\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Load excel\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load excel\Lookup.Outputs[Lookup Match Output].Columns[Key_FACTS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Load excel\Lookup.Outputs[Lookup Match Output].Columns[Key_FACTS]"
+                      name="Key_FACTS"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Key_FACTS</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load excel\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Load excel\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load excel\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Load excel\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load excel\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load excel\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load excel\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load excel\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Load excel\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -15484,7 +15974,7 @@ where [refTable].[IATA] = ?</property>
                 <input
                   refId="Package\Load excel\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="RedirectRow"
+                  errorRowDisposition="IgnoreFailure"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -16862,7 +17352,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Load excel\Script Component.Inputs[Input 0].Columns[strMean_Price]"
-                      cachedDataType="wstr"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
                       cachedName="strMean_Price"
                       lineageId="Package\Load excel\Data Conversion.Outputs[Data Conversion Output].Columns[strMean_Price]" />
@@ -16957,20 +17448,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               name="Lookup Error Output"
               startId="Package\Load excel\rt.Outputs[Lookup Error Output]" />
             <path
+              refId="Package\Load excel.Paths[Lookup Error Output2]"
+              endId="Package\Load excel\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\Load excel\Lookup.Outputs[Lookup Error Output]" />
+            <path
               refId="Package\Load excel.Paths[Lookup Match Output]"
               endId="Package\Load excel\rt.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Load excel\al.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load excel.Paths[Lookup Match Output1]"
-              endId="Package\Load excel\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Load excel\Lookup.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Load excel\rt.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Load excel.Paths[OLE DB Destination Error Output]"
-              endId="Package\Load excel\ERROR DWH.Inputs[Flat File Destination Input]"
-              name="OLE DB Destination Error Output"
-              startId="Package\Load excel\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
+              refId="Package\Load excel.Paths[Lookup No Match Output]"
+              endId="Package\Load excel\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Load excel\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Load excel.Paths[Output 0]"
               endId="Package\Load excel\al.Inputs[Lookup Input]"
@@ -23350,9 +23846,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23386,9 +23880,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23446,9 +23938,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23470,9 +23960,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23494,9 +23982,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23530,9 +24016,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -25141,9 +25625,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25177,9 +25659,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25213,81 +25693,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\load csv.Paths[OLE DB Destination Error Output]"
-          TopLeft="465.666666666667,191">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="25.8333333333334,82"
-              Start="0,0"
-              End="25.8333333333334,74.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.3520336605891" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.3520336605891"
-                    Point2="0,33.3520336605891"
-                    Point3="4,33.3520336605891" />
-                  <mssgle:LineSegment
-                    End="21.8333333333334,33.3520336605891" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.8333333333334,33.3520336605891"
-                    Point2="25.8333333333334,33.3520336605891"
-                    Point3="25.8333333333334,37.3520336605891" />
-                  <mssgle:LineSegment
-                    End="25.8333333333334,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-60.2922395833333,38.3520336605891,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\load csv.Paths[Lookup Match Output1]"
-          TopLeft="112.333333333333,277">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="331.166666666667,-86"
-              Start="0,0"
-              End="331.166666666667,-78.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-31.3214285714286" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-31.3214285714286"
-                    Point2="0,-35.3214285714286"
-                    Point3="4,-35.3214285714286" />
-                  <mssgle:LineSegment
-                    End="327.166666666667,-35.3214285714286" />
-                  <mssgle:CubicBezierSegment
-                    Point1="327.166666666667,-35.3214285714286"
-                    Point2="331.166666666667,-35.3214285714286"
-                    Point3="331.166666666667,-39.3214285714286" />
-                  <mssgle:LineSegment
-                    End="331.166666666667,-78.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="117.391946614583,-30.3214285714286,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25347,6 +25753,118 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-14.36638671875,-17.609375,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="115,42"
+          Id="Package\load csv\Lookup"
+          TopLeft="283,256" />
+        <EdgeLayout
+          Id="Package\load csv.Paths[Lookup Match Output1]"
+          TopLeft="143,292.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="140,-15.3333333333333"
+              Start="0,0"
+              End="132.5,-15.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.0825688073394,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.0825688073394,0"
+                    Point2="59.0825688073394,0"
+                    Point3="59.0825688073394,-4" />
+                  <mssgle:LineSegment
+                    End="59.0825688073394,-11.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.0825688073394,-11.3333333333333"
+                    Point2="59.0825688073394,-15.3333333333333"
+                    Point3="63.0825688073394,-15.3333333333333" />
+                  <mssgle:LineSegment
+                    End="132.5,-15.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="10.8911820885894,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load csv.Paths[Lookup No Match Output]"
+          TopLeft="340.5,256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103,-65"
+              Start="0,0"
+              End="103,-57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-28.5"
+                    Point2="0,-32.5"
+                    Point3="4,-32.5" />
+                  <mssgle:LineSegment
+                    End="99,-32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="99,-32.5"
+                    Point2="103,-32.5"
+                    Point3="103,-36.5" />
+                  <mssgle:LineSegment
+                    End="103,-57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.30638671875,-27.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load csv.Paths[Lookup Error Output2]"
+          TopLeft="398,277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37,17"
+              Start="0,0"
+              End="29.5,17">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="14.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.5,0"
+                    Point2="18.5,0"
+                    Point3="18.5,4" />
+                  <mssgle:LineSegment
+                    End="18.5,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,13"
+                    Point2="18.5,17"
+                    Point3="22.5,17" />
+                  <mssgle:LineSegment
+                    End="29.5,17" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.36638671875,-17.609375,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -25434,10 +25952,6 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
           Id="Package\Load excel\Data Conversion"
           TopLeft="42,116" />
         <NodeLayout
-          Size="142,42"
-          Id="Package\Load excel\ERROR DWH"
-          TopLeft="499,261" />
-        <NodeLayout
           Size="173,42"
           Id="Package\Load excel\OLE DB Destination"
           TopLeft="373,158" />
@@ -25452,7 +25966,7 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
         <NodeLayout
           Size="107,42"
           Id="Package\Load excel\er RT"
-          TopLeft="237,303" />
+          TopLeft="256,373" />
         <EdgeLayout
           Id="Package\Load excel.Paths[Output 0]"
           TopLeft="124.5,224">
@@ -25488,78 +26002,6 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load excel.Paths[OLE DB Destination Error Output]"
-          TopLeft="487,200">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="83,61"
-              Start="0,0"
-              End="83,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.7353951890034" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.7353951890034"
-                    Point2="0,24.7353951890034"
-                    Point3="4,24.7353951890034" />
-                  <mssgle:LineSegment
-                    End="79,24.7353951890034" />
-                  <mssgle:CubicBezierSegment
-                    Point1="79,24.7353951890034"
-                    Point2="83,24.7353951890034"
-                    Point3="83,28.7353951890034" />
-                  <mssgle:LineSegment
-                    End="83,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-31.70890625,29.7353951890034,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load excel.Paths[Lookup Match Output1]"
-          TopLeft="129.333333333333,348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="330.166666666667,-148"
-              Start="0,0"
-              End="330.166666666667,-140.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-56.7857142857143" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-56.7857142857143"
-                    Point2="0,-60.7857142857143"
-                    Point3="4,-60.7857142857143" />
-                  <mssgle:LineSegment
-                    End="326.166666666667,-60.7857142857143" />
-                  <mssgle:CubicBezierSegment
-                    Point1="326.166666666667,-60.7857142857143"
-                    Point2="330.166666666667,-60.7857142857143"
-                    Point3="330.166666666667,-64.7857142857143" />
-                  <mssgle:LineSegment
-                    End="330.166666666667,-140.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="116.891946614584,-55.7857142857143,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load excel.Paths[Lookup Match Output]"
           TopLeft="116.25,301">
           <EdgeLayout.Curve>
@@ -25589,33 +26031,33 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="77,-45"
+              EndConnector="96,25"
               Start="0,0"
-              End="69.5,-45">
+              End="88.5,25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="34.5,0" />
+                    End="44,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="34.5,0"
-                    Point2="38.5,0"
-                    Point3="38.5,-4" />
+                    Point1="44,0"
+                    Point2="48,0"
+                    Point3="48,4" />
                   <mssgle:LineSegment
-                    End="38.5,-41" />
+                    End="48,21" />
                   <mssgle:CubicBezierSegment
-                    Point1="38.5,-41"
-                    Point2="38.5,-45"
-                    Point3="42.5,-45" />
+                    Point1="48,21"
+                    Point2="48,25"
+                    Point3="52,25" />
                   <mssgle:LineSegment
-                    End="69.5,-45" />
+                    End="88.5,25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.36638671875001,1,91.7327734375,11.609375"
+              BoundingBox="2.13361328124999,-17.609375,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -25709,6 +26151,116 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Load excel\Lookup"
+          TopLeft="366,255" />
+        <EdgeLayout
+          Id="Package\Load excel.Paths[Lookup Match Output1]"
+          TopLeft="129.333333333333,348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="294.166666666667,-51"
+              Start="0,0"
+              End="294.166666666667,-43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-16.9464285714286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-16.9464285714286"
+                    Point2="0,-20.9464285714286"
+                    Point3="4,-20.9464285714286" />
+                  <mssgle:LineSegment
+                    End="290.166666666667,-20.9464285714286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="290.166666666667,-20.9464285714286"
+                    Point2="294.166666666667,-20.9464285714286"
+                    Point3="294.166666666667,-24.9464285714286" />
+                  <mssgle:LineSegment
+                    End="294.166666666667,-43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="98.8919466145833,-15.9464285714286,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load excel.Paths[Lookup No Match Output]"
+          TopLeft="423.5,255">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36,-55"
+              Start="0,0"
+              End="36,-47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-23.5"
+                    Point2="0,-27.5"
+                    Point3="4,-27.5" />
+                  <mssgle:LineSegment
+                    End="32,-27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32,-27.5"
+                    Point2="36,-27.5"
+                    Point3="36,-31.5" />
+                  <mssgle:LineSegment
+                    End="36,-47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-37.80638671875,-22.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Load excel\Flat File Destination"
+          TopLeft="454,305" />
+        <EdgeLayout
+          Id="Package\Load excel.Paths[Lookup Error Output2]"
+          TopLeft="481,276">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60,29"
+              Start="0,0"
+              End="60,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56,0"
+                    Point2="60,0"
+                    Point3="60,4" />
+                  <mssgle:LineSegment
+                    End="60,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="14.13361328125,-17.609375,91.7327734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -26973,6 +27525,52 @@ WHERE        (Routes_Art.isLoaded IS NULL) AND (Routes_Art.[Sour AP ID] &lt;&gt;
   <PipelineComponentMetadata
     design-time-name="Package\set isLoaded in RT\Get  where null">
     <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load excel\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\load csv\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
