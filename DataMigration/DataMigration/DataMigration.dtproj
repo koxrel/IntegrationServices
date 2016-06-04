@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">EKATERINAZHCDB9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwNSL6y03skm6cKpzuFlypAAAAAACAAAAAAAQZgAAAAEAACAAAABVo8oGAhfI4TcjQCSsFxZLqk1viGLkFZgsTq4oPhGbuQAAAAAOgAAAAAIAACAAAADfx4ns0QbFinuBd5F3HZT3iz+BFm1tUzXPfZ1A/Bu7CJAAAAC0tOIMFeegAvdC78zBA4RM8HhdmB6YRYJC/Eww2fKF9JxciDDuMXM7J98MhKEIBLKnKMtfPi7aAFSWE9kHfBD1EZ+F4yiIeGrRGmvUvLwiNP8aIZyF5IOyJn/5//ObaSpBd6De1lpHoRArdxIdKyPt/9t642mYEeUbQXuBS/C4+uCUC0zRoEZ7Gtz5vWhMKURAAAAAkWwy0wIKtOMucFNFP5aHocFBXXRpsGL5dZHIHlEFbnI+Ge2OYJZr//7J5PFvJ7jJdsTWio4CTcPCrNAvLyUnow==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwNSL6y03skm6cKpzuFlypAAAAAACAAAAAAAQZgAAAAEAACAAAAAJVK7cYAIr+BuomJXVA7bTCprRFX/xH8W5rPr+80fHzQAAAAAOgAAAAAIAACAAAAAsNnm6wfodboIKvXNuTTQJXE4crHagOrpROMEUVkws45AAAADcRiqLuD6NUMMyHZWhHBlW9A1egUekKlTY6o/fomUj7xK7p8sbuQ6U3oMj4UmokuLCcvm4VBI5wh/th2XKzB+NIyM7kMWq7rITUc4PflHk6eO0qWzIOmq4AjQM48A92flVhq2aj3QgqIvFAXe3rCZYPzQSDl8vhNpCioFq9u5XdiEaZHCdRT991IFPTCbzE5FAAAAAA99MWOeTDh53k1YSjqd/Q8gAK1U105PNI5jYkk4slbFA33r/oOvVL+0y7VyHaIalM7EJK7Ykh6AZpqMovNtLVg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">234</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">235</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A1C94C07-94CA-4DDB-8B3B-EE541ACD7BE9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E7088DD3-E2F8-419C-B6A9-7056D972F051}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1425,7 +1425,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Y:\Downloads\dataDW 2\data.xls;Extended Properties="EXCEL 8.0;HDR=NO";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\\Mac\Home\Desktop\вшэ уеба\управление данными\Реферат часть 2 Игорь Ангелина\dataDW 2\data.xls;Extended Properties="EXCEL 8.0;HDR=NO";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1440,7 +1440,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Y:\Downloads\dataDW 2\data.xls</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\Mac\Home\Desktop\вшэ уеба\управление данными\Реферат часть 2 Игорь Ангелина\dataDW 2\data.xls</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1513,7 +1513,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Y:\Downloads\dataDW 2\data.xls</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\Mac\Home\Desktop\вшэ уеба\управление данными\Реферат часть 2 Игорь Ангелина\dataDW 2\data.xls</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
